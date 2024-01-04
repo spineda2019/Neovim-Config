@@ -1,10 +1,20 @@
-if vim.loop.os_uname().sysname == "Windows_NT" then
-	require('nvim-treesitter.install').compilers = { "zig" }
-end
-require'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.install").compilers = { "zig" }
+require("nvim-treesitter.configs").setup({
 
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
-	ensure_installed = {"python", "c", "cpp", "rust", "javascript", "typescript", "lua", "vim", "vimdoc", "query", "markdown"},
+	ensure_installed = {
+		"python",
+		"c",
+		"cpp",
+		"rust",
+		"javascript",
+		"typescript",
+		"lua",
+		"vim",
+		"vimdoc",
+		"query",
+		"markdown",
+	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,
@@ -27,4 +37,4 @@ require'nvim-treesitter.configs'.setup {
 		-- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = false,
 	},
-}
+})
