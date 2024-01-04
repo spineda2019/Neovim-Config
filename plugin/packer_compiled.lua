@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["mini.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mini.nvim",
+    url = "https://github.com/echasnovski/mini.nvim"
+  },
   ["none-ls.nvim"] = {
     loaded = true,
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\none-ls.nvim",
@@ -138,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lint"] = {
+    loaded = true,
+    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lint",
+    url = "https://github.com/mfussenegger/nvim-lint"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
