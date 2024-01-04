@@ -11,9 +11,9 @@ end
 
 -- Quick terminal
 
-function OpenTerminalInNewTab()
+function OpenTerminalAbove()
 	vim.cmd("lcd %:p:h")
-	vim.cmd("tabnew | terminal")
+	vim.cmd("split | terminal")
 	vim.cmd("startinsert")
 end
 
@@ -21,7 +21,7 @@ function ExitSearchPattern()
 	vim.cmd("noh")
 end
 
-vim.api.nvim_set_keymap("n", "<leader>t", ":lua OpenTerminalInNewTab()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>t", ":lua OpenTerminalAbove()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>/", ":lua ExitSearchPattern()<CR>", { noremap = true, silent = true })
 
 vim.cmd([[ 
