@@ -10,10 +10,12 @@ function ColorMyPencils()
 end
 
 -- Quick terminal
+vim.cmd("highlight MyTerminal guibg=#772953 ctermbg=DarkMagenta")
 
 function OpenTerminalAbove()
 	vim.cmd("lcd %:p:h")
-	vim.cmd("split | terminal")
+	vim.cmd("belowright split | terminal")
+	vim.cmd("setlocal winhighlight=Normal:MyTerminal")
 	vim.cmd("startinsert")
 end
 
