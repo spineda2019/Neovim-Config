@@ -61,4 +61,6 @@ return require("packer").startup(function(use)
 	use("mfussenegger/nvim-lint")
 
 	use({ "echasnovski/mini.nvim", branch = "stable" })
+
+	use("tpope/vim-fugitive")
 end)
