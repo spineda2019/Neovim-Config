@@ -21,12 +21,12 @@ end
 
 function OpenFileTreeLeft()
 	vim.cmd("lcd %:p:h")
-	vim.cmd("Neotree position=left dir=.")
+	vim.cmd("vsplit | Ex")
 end
 
 function OpenFileTreeRight()
 	vim.cmd("lcd %:p:h")
-	vim.cmd("Neotree position=right dir=.")
+	vim.cmd("vsplit | Ex")
 end
 
 function ExitSearchPattern()
