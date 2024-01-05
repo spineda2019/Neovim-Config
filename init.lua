@@ -1,6 +1,8 @@
 require("sebastian")
 print("Welcome to Sebastian's NeoVim!")
 
+vim.g.netrw_banner = 1
+
 vim.g.python_host_prog =
 	"C:\\Users\\SEBASTIANP\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\python.exe"
 
@@ -20,13 +22,19 @@ function OpenTerminalAbove()
 end
 
 function OpenFileTreeLeft()
+	vim.g.netrw_banner = 0
 	vim.cmd("lcd %:p:h")
 	vim.cmd("vsplit | Ex")
+	vim.cmd("vertical resize 30")
+	vim.g.netrw_banner = 1
 end
 
 function OpenFileTreeRight()
+	vim.g.netrw_banner = 0
 	vim.cmd("lcd %:p:h")
-	vim.cmd("vsplit | Ex")
+	vim.cmd("rightbelow vsplit | Ex")
+	vim.cmd("vertical resize 30")
+	vim.g.netrw_banner = 1
 end
 
 function ExitSearchPattern()
