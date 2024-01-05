@@ -19,12 +19,24 @@ function OpenTerminalAbove()
 	vim.cmd("startinsert")
 end
 
+function OpenFileTreeLeft()
+	vim.cmd("lcd %:p:h")
+	vim.cmd("Neotree position=left dir=.")
+end
+
+function OpenFileTreeRight()
+	vim.cmd("lcd %:p:h")
+	vim.cmd("Neotree position=right dir=.")
+end
+
 function ExitSearchPattern()
 	vim.cmd("noh")
 end
 
 vim.api.nvim_set_keymap("n", "<leader>t", ":lua OpenTerminalAbove()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>/", ":lua ExitSearchPattern()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>h", ":lua OpenFileTreeLeft()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>l", ":lua OpenFileTreeRight()<CR>", { noremap = true, silent = true })
 
 vim.cmd([[ 
 autocmd BufEnter * highlight ColorColumn ctermbg=darkyellow guibg=darkyellow
