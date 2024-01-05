@@ -27,7 +27,9 @@ return require("packer").startup(function(use)
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
-	use({ "theprimeagen/harpoon", branch = "harpoon2" })
+	use("nvim-lua/plenary.nvim")
+
+	use({ "theprimeagen/harpoon", branch = "harpoon2", requires = { { "nvim-lua/plenary.nvim" } } })
 
 	use("mbbill/undotree")
 
