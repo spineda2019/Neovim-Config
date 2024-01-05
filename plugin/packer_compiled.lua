@@ -134,20 +134,10 @@ _G.packer_plugins = {
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mini.nvim",
     url = "https://github.com/echasnovski/mini.nvim"
   },
-  ["neo-tree.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neo-tree.nvim",
-    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
-  },
   ["none-ls.nvim"] = {
     loaded = true,
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\none-ls.nvim",
     url = "https://github.com/nvimtools/none-ls.nvim"
-  },
-  ["nui.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nui.nvim",
-    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -168,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
-    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
