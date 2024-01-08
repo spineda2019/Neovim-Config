@@ -63,4 +63,8 @@ return require("packer").startup(function(use)
 	use("mfussenegger/nvim-lint")
 
 	use("tpope/vim-fugitive")
+
+	use("petertriho/nvim-scrollbar")
+
+	use("folke/tokyonight.nvim")
 end)

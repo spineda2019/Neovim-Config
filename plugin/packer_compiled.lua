@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-scrollbar"] = {
+    loaded = true,
+    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-scrollbar",
+    url = "https://github.com/petertriho/nvim-scrollbar"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
@@ -173,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   undotree = {
     loaded = true,
