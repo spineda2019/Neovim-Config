@@ -21,6 +21,8 @@ function OpenTerminalAbove()
 	vim.cmd("startinsert")
 end
 
+-- Basic FileTree
+
 function OpenFileTreeLeft()
 	vim.g.netrw_banner = 0
 	vim.cmd("lcd %:p:h")
@@ -40,6 +42,69 @@ end
 function ExitSearchPattern()
 	vim.cmd("noh")
 end
+
+-- Save on write
+local autocmd_group = vim.api.nvim_create_augroup("Custom auto-commands", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = { "*.py" },
+	desc = "Auto-format python files after saving",
+	callback = function()
+		local fileName = vim.api.nvim_buf_get_name(0)
+		vim.cmd(':silent !autopep8 --in-place "' .. fileName .. '"')
+	end,
+	group = autocmd_group,
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = { "*.rs" },
+	desc = "Auto-format rust files after saving",
+	callback = function()
+		local fileName = vim.api.nvim_buf_get_name(0)
+		vim.cmd(':silent !rustfmt "' .. fileName .. '"')
+	end,
+	group = autocmd_group,
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = { "*.lua" },
+	desc = "Auto-format lua files after saving",
+	callback = function()
+		local fileName = vim.api.nvim_buf_get_name(0)
+		vim.cmd(':silent !stylua "' .. fileName .. '"')
+	end,
+	group = autocmd_group,
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = { "*.cpp" },
+	desc = "Auto-format c++ files after saving",
+	callback = function()
+		local fileName = vim.api.nvim_buf_get_name(0)
+		vim.cmd(':silent !clang-format -style=Google "' .. fileName .. '"')
+	end,
+	group = autocmd_group,
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = { "*.js" },
+	desc = "Auto-format javascript files after saving",
+	callback = function()
+		local fileName = vim.api.nvim_buf_get_name(0)
+		vim.cmd(':silent !prettier.cmd -w "' .. fileName .. '"')
+	end,
+	group = autocmd_group,
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = { "*.ts" },
+	desc = "Auto-format typescript files after saving",
+	callback = function()
+		local fileName = vim.api.nvim_buf_get_name(0)
+		vim.cmd(':silent !prettier.cmd -w "' .. fileName .. '"')
+	end,
+	group = autocmd_group,
+})
 
 vim.api.nvim_set_keymap("n", "<leader>t", ":lua OpenTerminalAbove()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>/", ":lua ExitSearchPattern()<CR>", { noremap = true, silent = true })
