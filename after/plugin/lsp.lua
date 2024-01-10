@@ -52,16 +52,28 @@ require("mason-lspconfig").setup({
 	},
 })
 
+require("lspconfig").pyright.setup({})
+require("lspconfig").clangd.setup({})
+
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
+	-- Enable LSP snippets
+	snippet = {
+		expand = function(args)
+			vim.fn["vsnip#anonymous"](args.body)
+		end,
+	},
 	sources = {
 		{ name = "path" },
 		{ name = "nvim_lsp" },
+		{ name = "nvim_lsp_signature_help" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip", keyword_length = 2 },
 		{ name = "buffer", keyword_length = 3 },
+		{ name = "vsnip", keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
+		{ name = "calc" },
 	},
 	formatting = lsp_zero.cmp_format(),
 	mapping = cmp.mapping.preset.insert({
@@ -69,23 +81,27 @@ cmp.setup({
 		["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
 		["<C-h>"] = cmp.mapping.confirm({ select = true }),
 		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-n>"] = cmp.mapping.scroll_docs(-4),
+		["<C-p>"] = cmp.mapping.scroll_docs(4),
 	}),
 })
 
-require("lspconfig").rust_analyzer.setup({
-	settings = {
-		["rust-analyzer"] = {
-			checkOnSave = {
-				allFeatures = true,
-				overrideCommand = {
-					"cargo",
-					"clippy",
-					"--workspace",
-					"--message-format=json",
-					"--all-targets",
-					"--all-features",
-				},
-			},
-		},
-	},
-})
+--Set completeopt to have a better completion experience
+-- :help completeopt
+-- menuone: popup even when there's only one match
+-- noinsert: Do not insert text until a selection is made
+-- noselect: Do not select, force to select one from the menu
+-- shortness: avoid showing extra messages when using completion
+-- updatetime: set updatetime for CursorHold
+vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
+vim.opt.shortmess = vim.opt.shortmess + { c = true }
+vim.api.nvim_set_option("updatetime", 300)
+
+-- Fixed column for diagnostics to appear
+-- Show autodiagnostic popup on cursor hover_range
+-- Goto previous / next diagnostic warning / error
+-- Show inlay_hints more frequently
+vim.cmd([[
+set signcolumn=yes
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+]])
