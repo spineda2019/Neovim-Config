@@ -190,6 +190,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  rustaceanvim = {
+    loaded = true,
+    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rustaceanvim",
+    url = "https://github.com/mrcjkb/rustaceanvim"
+  },
   ["telescope-zf-native.nvim"] = {
     loaded = true,
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-zf-native.nvim",

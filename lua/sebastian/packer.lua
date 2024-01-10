@@ -36,6 +36,12 @@ return require("packer").startup(function(use)
 	use("natecraddock/telescope-zf-native.nvim")
 
 	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	})
+
+	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
 		requires = {
@@ -88,5 +94,10 @@ return require("packer").startup(function(use)
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	})
+
+	use({
+		"mrcjkb/rustaceanvim",
+		tag = "3.14.0",
 	})
 end)
