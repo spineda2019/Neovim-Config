@@ -39,41 +39,36 @@ return require("packer").startup(function(use)
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
-	})
+    })
 
-	use({
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
-		requires = {
-			--- Uncomment these if you want to manage the language servers from neovim
-			{ "williamboman/mason.nvim" },
-			{ "williamboman/mason-lspconfig.nvim" },
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
+        requires = {
+            --- Uncomment the two plugins below if you want to manage the language servers from neovim
+            --- and read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
 
-			-- LSP Support
-			{ "neovim/nvim-lspconfig" },
-			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" },
-			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-path" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-nvim-lua" },
-			-- Snippets
-			{ "L3MON4D3/LuaSnip" },
-			{ "rafamadriz/friendly-snippets" },
-		},
-	})
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'L3MON4D3/LuaSnip'},
+        }
+    }
 
-	use("nvimtools/none-ls.nvim")
+    -- use("nvimtools/none-ls.nvim")
 
-	use("mfussenegger/nvim-lint")
+    use("mfussenegger/nvim-lint")
 
-	use("tpope/vim-fugitive")
+    use("tpope/vim-fugitive")
 
-	use("petertriho/nvim-scrollbar")
+    use("petertriho/nvim-scrollbar")
 
-	use({
-		"folke/tokyonight.nvim",
+    use({
+        "folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		opts = {},
@@ -96,8 +91,5 @@ return require("packer").startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 
-	use({
-		"mrcjkb/rustaceanvim",
-		tag = "3.14.0",
-	})
+    use("mfussenegger/nvim-dap")
 end)

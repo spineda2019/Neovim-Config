@@ -4,3 +4,4 @@ packer git repo:
 unzip (on windows 7zip works too I think)
 gettext
 python3 & pip
+Windows def needs scoop to download python3 and pwsh

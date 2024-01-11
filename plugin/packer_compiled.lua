@@ -85,35 +85,10 @@ _G.packer_plugins = {
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\barbecue.nvim",
     url = "https://github.com/utilyre/barbecue.nvim"
   },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
-  ["cmp-nvim-lua"] = {
-    loaded = true,
-    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lua",
-    url = "https://github.com/hrsh7th/cmp-nvim-lua"
-  },
-  ["cmp-path"] = {
-    loaded = true,
-    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
-    url = "https://github.com/hrsh7th/cmp-path"
-  },
-  cmp_luasnip = {
-    loaded = true,
-    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   harpoon = {
     loaded = true,
@@ -140,15 +115,15 @@ _G.packer_plugins = {
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["none-ls.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\none-ls.nvim",
-    url = "https://github.com/nvimtools/none-ls.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lint"] = {
     loaded = true,
@@ -189,11 +164,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  rustaceanvim = {
-    loaded = true,
-    path = "C:\\Users\\SEBASTIANP\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rustaceanvim",
-    url = "https://github.com/mrcjkb/rustaceanvim"
   },
   ["telescope-zf-native.nvim"] = {
     loaded = true,
