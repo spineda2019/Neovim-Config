@@ -1,17 +1,14 @@
 require("sebastian")
 print("Welcome to Sebastian's NeoVim!")
 
-
 vim.g.netrw_banner = 1
 
-if vim.fn.has('win32') == 1 then
-vim.o.shell = "pwsh"
-vim.cmd("set shellcmdflag=-c")
-vim.g.python_host_prog =
-	"C:\\Users\\SEBASTIANP\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\python.exe"
+if vim.fn.has("win32") == 1 then
+	vim.o.shell = "pwsh"
+	vim.cmd("set shellcmdflag=-c")
+	vim.g.python_host_prog =
+		"C:\\Users\\SEBASTIANP\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\python.exe"
 end
-
-
 
 function ColorMyPencils()
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -93,25 +90,47 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	group = autocmd_group,
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = { "*.js" },
-	desc = "Auto-format javascript files after saving",
-	callback = function()
-		local fileName = vim.api.nvim_buf_get_name(0)
-		vim.cmd(':silent !prettier.cmd -w "' .. fileName .. '"')
-	end,
-	group = autocmd_group,
-})
+if vim.fn.has("win32") == 1 then
+	vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+		pattern = { "*.js" },
+		desc = "Auto-format javascript files after saving",
+		callback = function()
+			local fileName = vim.api.nvim_buf_get_name(0)
+			vim.cmd(':silent !prettier.cmd -w "' .. fileName .. '"')
+		end,
+		group = autocmd_group,
+	})
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = { "*.ts" },
-	desc = "Auto-format typescript files after saving",
-	callback = function()
-		local fileName = vim.api.nvim_buf_get_name(0)
-		vim.cmd(':silent !prettier.cmd -w "' .. fileName .. '"')
-	end,
-	group = autocmd_group,
-})
+	vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+		pattern = { "*.ts" },
+		desc = "Auto-format typescript files after saving",
+		callback = function()
+			local fileName = vim.api.nvim_buf_get_name(0)
+			vim.cmd(':silent !prettier.cmd -w "' .. fileName .. '"')
+		end,
+		group = autocmd_group,
+	})
+else
+	vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+		pattern = { "*.js" },
+		desc = "Auto-format javascript files after saving",
+		callback = function()
+			local fileName = vim.api.nvim_buf_get_name(0)
+			vim.cmd(':silent !prettier -w "' .. fileName .. '"')
+		end,
+		group = autocmd_group,
+	})
+
+	vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+		pattern = { "*.ts" },
+		desc = "Auto-format typescript files after saving",
+		callback = function()
+			local fileName = vim.api.nvim_buf_get_name(0)
+			vim.cmd(':silent !prettier -w "' .. fileName .. '"')
+		end,
+		group = autocmd_group,
+	})
+end
 
 vim.api.nvim_set_keymap("n", "<leader>t", ":lua OpenTerminalAbove()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>/", ":lua ExitSearchPattern()<CR>", { noremap = true, silent = true })
