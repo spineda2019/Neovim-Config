@@ -7,4 +7,9 @@ pynvim from pip
 unzip (on windows 7zip works too I think)
 gettext
 python3 & pip
+prettier (prettier.cmd on windows)
+rustfmt
+autopep8
+clang-format
+stylua
 Windows def needs scoop to download python3 and pwsh
