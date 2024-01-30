@@ -10,6 +10,7 @@ python3 & pip
 prettier (prettier.cmd on windows)
 rustfmt
 autopep8
+flake8 (for python lsp)
 clang-format
 stylua
 Windows def needs scoop to download python3 and pwsh
