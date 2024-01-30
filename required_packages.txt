@@ -1,6 +1,9 @@
-zig compiler (for windows compatibility to not use vcruntime.h)
 packer git repo: 
     git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+zig compiler (for windows compatibility to not use vcruntime.h)
+npm
+ripgrep
+pynvim from pip
 unzip (on windows 7zip works too I think)
 gettext
 python3 & pip
