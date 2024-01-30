@@ -1,13 +1,15 @@
 require("sebastian")
 print("Welcome to Sebastian's NeoVim!")
 
-vim.o.shell = "pwsh"
-vim.cmd("set shellcmdflag=-c")
 
 vim.g.netrw_banner = 1
 
+if vim.fn.has('win32') == 1 then
+vim.o.shell = "pwsh"
+vim.cmd("set shellcmdflag=-c")
 vim.g.python_host_prog =
 	"C:\\Users\\SEBASTIANP\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\python.exe"
+end
 
 
 
