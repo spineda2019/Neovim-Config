@@ -1,4 +1,8 @@
-require("nvim-treesitter.install").compilers = { "zig" }
+if vim.fn.has("win32") == 1 then
+	require("nvim-treesitter.install").compilers = { "zig" }
+else
+	require("nvim-treesitter.install").compilers = { "gcc" }
+end
 require("nvim-treesitter.configs").setup({
 
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
