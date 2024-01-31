@@ -31,7 +31,7 @@ return require("packer").startup(function(use)
 
 	use({ "theprimeagen/harpoon", branch = "harpoon2", requires = { { "nvim-lua/plenary.nvim" } } })
 
-	use("mbbill/undotree")
+	use({"mbbill/undotree", tag = "rel_6.1"})
 
 	use("natecraddock/telescope-zf-native.nvim")
 
@@ -63,7 +63,7 @@ return require("packer").startup(function(use)
 
     use("mfussenegger/nvim-lint")
 
-    use("tpope/vim-fugitive")
+    use({"tpope/vim-fugitive", tag = "v3.7"})
 
     use("petertriho/nvim-scrollbar")
 
