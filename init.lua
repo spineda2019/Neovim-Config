@@ -139,10 +139,10 @@ vim.api.nvim_set_keymap("n", "<leader>l", ":lua OpenFileTreeRight()<CR>", { nore
 
 vim.cmd([[ 
 autocmd BufEnter * highlight ColorColumn ctermbg=darkyellow guibg=darkyellow
-autocmd FileType rust setlocal colorcolumn=100
+autocmd FileType rust setlocal colorcolumn=101
 autocmd FileType python setlocal colorcolumn=80
-autocmd FileType c setlocal colorcolumn=80
-autocmd FileType cpp setlocal colorcolumn=80
-autocmd FileType javascript setlocal colorcolumn=80
-autocmd FileType typescript setlocal colorcolumn=80
+autocmd FileType c setlocal colorcolumn=81
+autocmd FileType cpp setlocal colorcolumn=81
+autocmd FileType javascript setlocal colorcolumn=81
+autocmd FileType typescript setlocal colorcolumn=81
 ]])
