@@ -73,15 +73,15 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	group = autocmd_group,
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = { "*.cpp" },
-	desc = "Auto-format c++ files after saving",
-	callback = function()
-		local fileName = vim.api.nvim_buf_get_name(0)
-		vim.cmd(':silent !clang-format -style=Google "' .. fileName .. '"')
-	end,
-	group = autocmd_group,
-})
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+-- 	pattern = { "*.cpp" },
+-- 	desc = "Auto-format c++ files after saving",
+-- 	callback = function()
+-- 		local fileName = vim.api.nvim_buf_get_name(0)
+-- 		vim.cmd(':silent !clang-format -style=Google "' .. fileName .. '"')
+-- 	end,
+-- 	group = autocmd_group,
+-- })
 
 if vim.fn.has("win32") == 1 then
 	vim.api.nvim_create_autocmd({ "BufWritePost" }, {
