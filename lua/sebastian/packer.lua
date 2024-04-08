@@ -31,7 +31,7 @@ return require("packer").startup(function(use)
 
 	use({ "theprimeagen/harpoon", branch = "harpoon2", requires = { { "nvim-lua/plenary.nvim" } } })
 
-	use({"mbbill/undotree", tag = "rel_6.1"})
+	use({ "mbbill/undotree", tag = "rel_6.1" })
 
 	use("natecraddock/telescope-zf-native.nvim")
 
@@ -39,36 +39,36 @@ return require("packer").startup(function(use)
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
-    })
+	})
 
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        requires = {
-            --- Uncomment the two plugins below if you want to manage the language servers from neovim
-            --- and read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+	use({
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v3.x",
+		requires = {
+			--- Uncomment the two plugins below if you want to manage the language servers from neovim
+			--- and read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
 
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'L3MON4D3/LuaSnip'},
-        }
-    }
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" },
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "L3MON4D3/LuaSnip" },
+		},
+	})
 
-    -- use("nvimtools/none-ls.nvim")
+	-- use("nvimtools/none-ls.nvim")
 
-    use("mfussenegger/nvim-lint")
+	use("mfussenegger/nvim-lint")
 
-    use({"tpope/vim-fugitive", tag = "v3.7"})
+	use({ "tpope/vim-fugitive", tag = "v3.7" })
 
-    use("petertriho/nvim-scrollbar")
+	use("petertriho/nvim-scrollbar")
 
-    use({
-        "folke/tokyonight.nvim",
+	use({
+		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		opts = {},
@@ -91,25 +91,32 @@ return require("packer").startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 
-    use("mfussenegger/nvim-dap")
+	use("mfussenegger/nvim-dap")
 
-    use({
-        "folke/trouble.nvim",
-        tag = "v2.10.0",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    })
+	use({
+		"folke/trouble.nvim",
+		tag = "v2.10.0",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	})
 
-    use({
-        "folke/todo-comments.nvim",
-        tag = "v1.1.0",
-        requires = "nvim-lua/plenary.nvim",
-        config = function()
-            require("todo-comments").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    })
+	use({
+		"folke/todo-comments.nvim",
+		tag = "v1.1.0",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 
+	if vim.fn.has("win32") ~= 1 then
+		use({
+			"nosduco/remote-sshfs.nvim",
+			requires = { { "nvim-telescope/telescope.nvim" } }, -- optional if you declare plugin somewhere else
+			tag = "v0.3.1",
+		})
+	end
 end)
