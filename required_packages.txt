@@ -15,3 +15,5 @@ flake8 (for python lsp)
 clang-format
 stylua
 Windows def needs scoop to download python3 and pwsh
+ssh
+sshfs (may only work on linux, not win32...)
