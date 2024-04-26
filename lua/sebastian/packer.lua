@@ -7,10 +7,12 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	use({ "nvim-lua/plenary.nvim", tag = "v0.1.4" })
+
 	use({
 		"nvim-telescope/telescope.nvim",
-		-- tag = "0.1.5",
-		branch = "0.1.x",
+		tag = "0.1.6",
+		-- branch = "0.1.x",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
@@ -23,23 +25,15 @@ return require("packer").startup(function(use)
 
 	-- })
 
-	use("Mofiqul/vscode.nvim")
-
-	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-
-	use("nvim-lua/plenary.nvim")
+	use({ "nvim-treesitter/nvim-treesitter", tag = "v0.9.2", run = ":TSUpdate" })
 
 	use({ "theprimeagen/harpoon", branch = "harpoon2", requires = { { "nvim-lua/plenary.nvim" } } })
 
 	use({ "mbbill/undotree", tag = "rel_6.1" })
 
-	use("natecraddock/telescope-zf-native.nvim")
-
-	use({
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	})
+	use({ "williamboman/mason.nvim", tag = "v1.10.0" })
+	use({ "williamboman/mason-lspconfig.nvim", tag = "v1.27.0" })
+	use({ "neovim/nvim-lspconfig", tag = "v0.1.7" })
 
 	use({
 		"VonHeikemen/lsp-zero.nvim",
@@ -69,7 +63,7 @@ return require("packer").startup(function(use)
 
 	use({
 		"folke/tokyonight.nvim",
-		lazy = false,
+		lazy = true,
 		priority = 1000,
 		opts = {},
 	})
