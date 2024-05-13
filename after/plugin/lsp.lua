@@ -42,7 +42,7 @@ require("mason").setup({
 	},
 })
 require("mason-lspconfig").setup({
-	ensure_installed = { "rust_analyzer", "clangd", "cssls", "html", "tsserver", "pyright", "taplo" },
+	ensure_installed = { "rust_analyzer", "clangd", "cssls", "html", "tsserver", "pyright", "taplo", "omnisharp" },
 	handlers = {
 		lsp_zero.default_setup,
 		lua_ls = function()
@@ -53,6 +53,7 @@ require("mason-lspconfig").setup({
 })
 
 require("lspconfig").pyright.setup({})
+require("lspconfig").omnisharp.setup({})
 require("lspconfig").clangd.setup({})
 require('lspconfig').rust_analyzer.setup {
     settings = {
