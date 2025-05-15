@@ -1,4 +1,5 @@
-require("sebastian")
+require("sebastian")    -- lua/sebastian/init.lua - basic key remappings
+require("config.lazy")  -- lua/config/lazy.lua - lazy.nvim bootstrapping
 print("Welcome to Sebastian's NeoVim!")
 
 vim.g.netrw_banner = 1
