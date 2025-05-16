@@ -60,6 +60,8 @@ return {
 
 	{
 		"petertriho/nvim-scrollbar",
+        lazy = "true",
+        event = "BufReadPost",
 		dependencies = { "folke/tokyonight.nvim" },
 		config = function()
 			local colors = require("tokyonight.colors").setup()
@@ -85,7 +87,9 @@ return {
 
 	{
 		"utilyre/barbecue.nvim",
-		-- tag = "*",
+		version = "*",
+        lazy = "true",
+        event = "BufReadPost",
 		dependencies = {
 			"SmiteshP/nvim-navic",
 			"nvim-tree/nvim-web-devicons", -- optional dependency
