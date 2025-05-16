@@ -14,20 +14,38 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		tag = "v1.27.0",
+        lazy = "true",
+        event = "BufReadPost",
 		config = function() end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		tag = "v0.1.7",
+        lazy = "true",
+        event = "BufReadPost",
 		config = function() end,
 	},
-	{ "hrsh7th/nvim-cmp" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "L3MON4D3/LuaSnip" },
+	{
+        "hrsh7th/nvim-cmp",
+        lazy = "true",
+        event = "BufReadPost",
+    },
+	{
+        "hrsh7th/cmp-nvim-lsp",
+        lazy = "true",
+        event = "BufReadPost",
+    },
+	{
+        "L3MON4D3/LuaSnip",
+        lazy = "true",
+        event = "BufReadPost",
+    },
 
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
+        lazy = "true",
+        event = "BufReadPost",
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
