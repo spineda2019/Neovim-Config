@@ -49,7 +49,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		tag = "v0.9.3",
 		build = ":TSUpdate",
-        lazy = "true"
+        lazy = "true",
         event = "BufReadPost",
 		config = function()
 			if vim.fn.has("win32") == 1 then
@@ -102,6 +102,8 @@ return {
 	{
 		"theprimeagen/harpoon",
 		branch = "harpoon2",
+        lazy = "true",
+        keys = "<leader>e",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			local harpoon = require("harpoon")
