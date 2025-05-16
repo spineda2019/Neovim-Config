@@ -49,6 +49,8 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		tag = "v0.9.3",
 		build = ":TSUpdate",
+        lazy = "true"
+        event = "BufReadPost",
 		config = function()
 			if vim.fn.has("win32") == 1 then
 				require("nvim-treesitter.install").compilers = { "zig" }
@@ -140,6 +142,8 @@ return {
 
 	{
 		"nvim-lualine/lualine.nvim",
+        lazy = "true",
+        event = "BufReadPost",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("lualine").setup({
@@ -200,6 +204,8 @@ return {
 
 	{
 		"folke/todo-comments.nvim",
+        lazy = "true",
+        event = "BufReadPost",
 		tag = "v1.1.0",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
