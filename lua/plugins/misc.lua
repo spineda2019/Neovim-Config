@@ -3,13 +3,13 @@
 return {
     {
         "nvim-lua/plenary.nvim",
-        tag = "v0.1.4",
+        commit = "74b06c6c75e4eeb3108ec01852001636d85a932b",
         lazy = true,
     },
 
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.6",
+        tag = "v0.2.2",
         -- branch = "0.1.x",
         dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
